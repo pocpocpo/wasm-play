@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/pocpocpo/wasm-play/issues"
   },
-  "homepage": "https://github.com/pocpocpo/wasm-play#readme"
+  "homepage": "https://github.com/pocpocpo/wasm-play#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
