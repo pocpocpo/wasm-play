@@ -9,5 +9,4 @@
 ;; $ wat2wasm <módulo>.wat --output <módulo>.wasm 
 ;; Esse comando gera o código binário.
 
-
 (module)

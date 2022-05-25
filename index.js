@@ -13,20 +13,22 @@ import fs from 'fs'
 // //  //  // --SQUARE MODULE-- // // // //
 
 // carregar o qruqivo wasm para um buffer
-const mathWasm = fs.readFileSync('./public/math-module.wasm')
+const wasm = fs.readFileSync('./public/basic-operations-module.wasm')
+
+const buffer = new Uint8Array(wasm)/*unsigned integer array*/
 
 // instanciar buffer como um arquivo webassembly
-const mathModule =
+const basicOperationsModule =
     await WebAssembly
-        .instantiate(new Uint8Array(mathWasm)/*unsigned integer array*/)
+        .instantiate(buffer)
         .then(res => res.instance.exports)
 // retorna um m[odulo] chamado square
 
 console.log('100^2 = ' + 
-    mathModule.square(100))
+    basicOperationsModule.sqr(100))
 
 console.log('12 + 12 = ' + 
-    mathModule.add(12, 12))
+    basicOperationsModule.add(12, 12))
 
-console.log('100 - 10 = ' + 
-    mathModule.sub(100, 10))
+console.log('100 - 10  ' + 
+    basicOperationsModule.sub(100, 10))

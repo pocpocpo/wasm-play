@@ -4,6 +4,7 @@
   "description": "```console\r $ git clone --recursive https://github.com/WebAssembly/wabt\r ```",
   "main": "index.js",
   "scripts": {
+    "build": "../wabt/bin/wat2wasm ./modules/basic-operations-module.wat -o ./public/basic-operations-module.wasm & ../wabt/bin/wat2wasm ./modules/fibonacci-module.wat -o ./public/fibonacci-module.wasm",
     "start": "node index.js",
     "test": "jest"
   },
